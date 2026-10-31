@@ -191,6 +191,8 @@ function photoButton(item) {
   button.append(frame);
   if (item.photos.length > 1) {
     button.append(el('span', { class: 'badge', text: `${item.photos.length} photos` }));
+  } else if (item.photoSource === 'web') {
+    button.append(el('span', { class: 'badge', text: 'Product photo' }));
   }
   button.addEventListener('click', () => openLightbox(item.id, 0));
   frameObserver.observe(frame);

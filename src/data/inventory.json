@@ -14,7 +14,7 @@
       "id": "alto-ts410",
       "name": "Alto Professional TS410",
       "category": "Speakers & stands",
-      "detail": "2000 W 10\" 2-way powered loudspeaker \u00b7 serial (21)T42401120427628",
+      "detail": "2000 W 10\" 2-way powered loudspeaker · serial (21)T42401120427628",
       "photos": [
         "alto-ts410.jpg"
       ]
@@ -25,15 +25,14 @@
       "category": "Speakers & stands",
       "detail": "Flexible Array Loudspeaker System",
       "photos": [
-        "bose-f1-812-a.jpg",
-        "bose-f1-812-b.jpg"
+        "bose-f1-812-a.jpg"
       ]
     },
     {
       "id": "pyle-stands",
       "name": "Pyle speaker stands",
       "category": "Speakers & stands",
-      "detail": "2\u00d7 speaker stands",
+      "detail": "2× speaker stands (model not recorded)",
       "photos": []
     },
     {
@@ -41,7 +40,11 @@
       "name": "Yamaha Mixing Console MG12",
       "category": "Mixers & wireless",
       "detail": "12-channel mixing console",
-      "photos": []
+      "photos": [
+        "yamaha-mg12.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://usa.yamaha.com/products/proaudio/mixers/mg_series_xu_model/index.html"
     },
     {
       "id": "pyle-pmxu43bt",
@@ -57,35 +60,51 @@
       "name": "Shure BLX88",
       "category": "Mixers & wireless",
       "detail": "Dual wireless receiver",
-      "photos": []
+      "photos": [
+        "shure-blx88.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.shure.com/en-US/products/wireless-systems/blx_wireless/blx88"
     },
     {
       "id": "shure-blx5r",
       "name": "Shure BLX5R",
       "category": "Mixers & wireless",
-      "detail": "Wireless receiver (as labeled)",
+      "detail": "Wireless receiver — label reads BLX5R (Shure’s rack receiver is the BLX4R; confirm model)",
       "photos": []
     },
     {
       "id": "shure-scm410",
       "name": "Shure IntelliMix SCM410",
       "category": "Mixers & wireless",
-      "detail": "Automatic mixer",
-      "photos": []
+      "detail": "4-channel automatic mic mixer",
+      "photos": [
+        "shure-scm410.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.shure.com/en-US/products/mixers/scm410"
     },
     {
       "id": "shure-blx1",
       "name": "Shure BLX1 H9",
       "category": "Mixers & wireless",
-      "detail": "Bodypack transmitter",
-      "photos": []
+      "detail": "BLX1 bodypack transmitter (H9 band)",
+      "photos": [
+        "shure-blx1.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.shure.com/en-US/products/wireless-systems/blx_wireless/blx1"
     },
     {
       "id": "swiff-m1",
       "name": "Swiff Audio M1",
       "category": "Mixers & wireless",
-      "detail": "2\u00d7 transmitters",
-      "photos": []
+      "detail": "2× M1 2.4 GHz XLR plug-on wireless transmitters",
+      "photos": [
+        "swiff-m1.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.cbnmusicwarehouse.com/products/swiff-audio-m1-wireless-microphone-system-transmitter"
     },
     {
       "id": "1mii-bt",
@@ -101,44 +120,49 @@
       "name": "Rode NTG4",
       "category": "Mics",
       "detail": "Shotgun microphone",
-      "photos": []
+      "photos": [
+        "rode-ntg4.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://rode.com/en/microphones/on-camera-shotgun/ntg4"
     },
     {
       "id": "shure-sm58",
       "name": "Shure SM58",
       "category": "Mics",
       "detail": "Handheld dynamic mic",
-      "photos": []
+      "photos": [
+        "shure-sm58.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.shure.com/en-US/products/microphones/sm58"
     },
     {
       "id": "shure-head",
-      "name": "Shure head microphone",
+      "name": "Shure headset microphone",
       "category": "Mics",
-      "detail": "Headset mic",
+      "detail": "Headworn mic (model not recorded)",
       "photos": []
     },
     {
       "id": "radioshack-3300660",
       "name": "RadioShack 3300660",
       "category": "Mics",
-      "detail": "Microphone",
-      "photos": []
+      "detail": "USB digital / XLR analog dynamic microphone",
+      "photos": [
+        "radioshack-3300660.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.openboxcentral.com/radioshack-usb-digital-xlr-analog-dynamic-microphone/"
     },
     {
       "id": "mini-lav",
-      "name": "Mini lav / headset mic",
-      "category": "Mics",
-      "detail": "Silver/blue capsule with mini-XLR lead",
+      "name": "XLR-female mini lead (silver/blue)",
+      "category": "Cables & power",
+      "detail": "Silver/blue XLR-female connector on a short thin lead with a mini plug — likely a lav/headset mic adapter",
       "photos": [
-        "mini-lav-mic.jpg"
+        "xlr-female-mini-lead.jpg"
       ]
-    },
-    {
-      "id": "mic-arm",
-      "name": "Microphone arm attachment",
-      "category": "Stands & hardware",
-      "detail": "Arm attachment for stand",
-      "photos": []
     },
     {
       "id": "boom-arm",
@@ -153,46 +177,55 @@
       "id": "mic-stands",
       "name": "Microphone stands",
       "category": "Stands & hardware",
-      "detail": "2\u00d7 3.5 ft stands",
+      "detail": "2× 3.5 ft microphone stands",
       "photos": []
     },
     {
       "id": "rode-holders",
-      "name": "Rode microphone holders",
+      "name": "Rode microphone clips",
       "category": "Stands & hardware",
-      "detail": "2\u00d7 holders",
-      "photos": []
+      "detail": "2× clips (product photo: RØDE RM5, the clip that ships with the NTG4)",
+      "photos": [
+        "rode-rm5-holder.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://rode.com/en/accessories/mounts-arms/rm5"
     },
     {
       "id": "shure-holder",
-      "name": "Shure microphone holder",
+      "name": "Shure microphone clip",
       "category": "Stands & hardware",
-      "detail": "Holder",
-      "photos": []
+      "detail": "Mic clip (product photo: Shure A25D, the clip that ships with the SM58)",
+      "photos": [
+        "shure-a25d-holder.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.shure.com/en-US/products/accessories/a25d"
     },
     {
       "id": "xlr-quarter-adapters",
-      "name": "XLR \u2192 1/4\" adapters",
+      "name": "XLR → 1/4\" adapters",
       "category": "Stands & hardware",
-      "detail": "3\u00d7 adapters (green tips)",
+      "detail": "3× adapters: 2× XLR female → 1/4\" TS, 1× XLR male → 1/4\" TRS",
       "photos": [
-        "xlr-to-quarter-adapters.jpg"
+        "xlr-to-quarter-adapters-a.jpg",
+        "xlr-to-quarter-adapters-b.jpg"
       ]
     },
     {
       "id": "proco-cable",
-      "name": "Pro Co multi cable",
+      "name": "Pro Co cables",
       "category": "Cables & power",
-      "detail": "XLR male / XLR female / 1/4\" TRS",
+      "detail": "XLR male / XLR female / 1/4\" TRS ends",
       "photos": [
-        "proco-xlr-cable.jpg"
+        "proco-cable.jpg"
       ]
     },
     {
       "id": "hosa-cable",
-      "name": "HOSA multi-end cable",
+      "name": "Dual 1/4\" + RCA cable",
       "category": "Cables & power",
-      "detail": "2\u00d7 1/4\" + 2\u00d7 3.5mm",
+      "detail": "Black dual cable: 2× 1/4\" plugs to 2× RCA plugs (listed earlier as HOSA multi-end)",
       "photos": [
         "hosa-multi-cable.jpg"
       ]
@@ -201,21 +234,24 @@
       "id": "braided-xlr",
       "name": "Braided XLR cable",
       "category": "Cables & power",
-      "detail": "Black/white braided XLR male\u2013female",
+      "detail": "Black/white braided XLR male–female",
       "photos": [
         "braided-xlr.jpg"
       ]
     },
     {
       "id": "xlr-black",
-      "name": "Black XLR cable",
+      "name": "Black XLR cables",
       "category": "Cables & power",
-      "detail": "XLR male\u2013female (no dedicated photo yet)",
-      "photos": []
+      "detail": "XLR male–female",
+      "photos": [
+        "xlr-black-a.jpg",
+        "xlr-black-b.jpg"
+      ]
     },
     {
       "id": "35mm-xlr",
-      "name": "3.5mm TRS \u2192 XLR",
+      "name": "3.5mm TRS → XLR",
       "category": "Cables & power",
       "detail": "3.5mm TRS to XLR male",
       "photos": [
@@ -226,16 +262,16 @@
       "id": "teal-y",
       "name": "Teal Y-cable",
       "category": "Cables & power",
-      "detail": "3.5mm \u2192 dual 1/4\" braided",
+      "detail": "3.5mm → dual 1/4\" braided",
       "photos": [
         "teal-y-cable.jpg"
       ]
     },
     {
       "id": "rca-black",
-      "name": "RCA cable",
+      "name": "Black RCA cable",
       "category": "Cables & power",
-      "detail": "Red/white RCA",
+      "detail": "Red/white RCA, black jacket",
       "photos": [
         "rca-black.jpg"
       ]
@@ -253,28 +289,17 @@
       "id": "speakon",
       "name": "Speakon / circular cables",
       "category": "Cables & power",
-      "detail": "2\u00d7 thick Speakon-style cables",
-      "photos": [
-        "speakon-cables.jpg"
-      ]
+      "detail": "2× thick Speakon-style cables (no photo yet)",
+      "photos": []
     },
     {
       "id": "psu",
-      "name": "Power brick / PSU",
+      "name": "Power bricks / PSUs",
       "category": "Cables & power",
-      "detail": "PSU with XLR-style DC + 2-prong AC (photos show 2)",
+      "detail": "2 power bricks with XLR-style connectors (one with 2-prong AC plug)",
       "photos": [
         "psu-brick-a.jpg",
         "psu-brick-b.jpg"
-      ]
-    },
-    {
-      "id": "xlr-ends",
-      "name": "Loose XLR connectors",
-      "category": "Cables & power",
-      "detail": "Assorted XLR ends / short leads from photo",
-      "photos": [
-        "xlr-ends-bundle.jpg"
       ]
     }
   ]
