@@ -12,9 +12,9 @@
   "items": [
     {
       "id": "alto-ts410",
-      "name": "Alto Professional TS410",
+      "name": "Alto Professional TS410 (2\u00d7)",
       "category": "Speakers & stands",
-      "detail": "2000 W 10\" 2-way powered loudspeaker · serial (21)T42401120427628",
+      "detail": "2\u00d7 2000 W 10\" 2-way powered loudspeakers \u00b7 serial on unit 1: (21)T42401120427628",
       "photos": [
         "alto-ts410.jpg"
       ]
@@ -32,7 +32,7 @@
       "id": "pyle-stands",
       "name": "Pyle speaker stands",
       "category": "Speakers & stands",
-      "detail": "2× speaker stands (model not recorded)",
+      "detail": "2\u00d7 speaker stands (model not recorded)",
       "photos": []
     },
     {
@@ -70,7 +70,7 @@
       "id": "shure-blx5r",
       "name": "Shure BLX5R",
       "category": "Mixers & wireless",
-      "detail": "Wireless receiver — label reads BLX5R (Shure’s rack receiver is the BLX4R; confirm model)",
+      "detail": "Wireless receiver \u2014 label reads BLX5R (Shure\u2019s rack receiver is the BLX4R; confirm model)",
       "photos": []
     },
     {
@@ -99,7 +99,7 @@
       "id": "swiff-m1",
       "name": "Swiff Audio M1",
       "category": "Mixers & wireless",
-      "detail": "2× M1 2.4 GHz XLR plug-on wireless transmitters",
+      "detail": "2\u00d7 M1 2.4 GHz XLR plug-on wireless transmitters",
       "photos": [
         "swiff-m1.jpg"
       ],
@@ -159,7 +159,7 @@
       "id": "mini-lav",
       "name": "XLR-female mini lead (silver/blue)",
       "category": "Cables & power",
-      "detail": "Silver/blue XLR-female connector on a short thin lead with a mini plug — likely a lav/headset mic adapter",
+      "detail": "Silver/blue XLR-female connector on a short thin lead with a mini plug \u2014 likely a lav/headset mic adapter",
       "photos": [
         "xlr-female-mini-lead.jpg"
       ]
@@ -177,14 +177,14 @@
       "id": "mic-stands",
       "name": "Microphone stands",
       "category": "Stands & hardware",
-      "detail": "2× 3.5 ft microphone stands",
+      "detail": "2\u00d7 3.5 ft microphone stands",
       "photos": []
     },
     {
       "id": "rode-holders",
       "name": "Rode microphone clips",
       "category": "Stands & hardware",
-      "detail": "2× clips (product photo: RØDE RM5, the clip that ships with the NTG4)",
+      "detail": "2\u00d7 clips (product photo: R\u00d8DE RM5, the clip that ships with the NTG4)",
       "photos": [
         "rode-rm5-holder.jpg"
       ],
@@ -204,9 +204,9 @@
     },
     {
       "id": "xlr-quarter-adapters",
-      "name": "XLR → 1/4\" adapters",
+      "name": "XLR \u2192 1/4\" adapters",
       "category": "Stands & hardware",
-      "detail": "3× adapters: 2× XLR female → 1/4\" TS, 1× XLR male → 1/4\" TRS",
+      "detail": "3\u00d7 adapters: 2\u00d7 XLR female \u2192 1/4\" TS, 1\u00d7 XLR male \u2192 1/4\" TRS",
       "photos": [
         "xlr-to-quarter-adapters-a.jpg",
         "xlr-to-quarter-adapters-b.jpg"
@@ -225,7 +225,7 @@
       "id": "hosa-cable",
       "name": "Dual 1/4\" + RCA cable",
       "category": "Cables & power",
-      "detail": "Black dual cable: 2× 1/4\" plugs to 2× RCA plugs (listed earlier as HOSA multi-end)",
+      "detail": "Black dual cable: 2\u00d7 1/4\" plugs to 2\u00d7 RCA plugs (listed earlier as HOSA multi-end)",
       "photos": [
         "hosa-multi-cable.jpg"
       ]
@@ -234,7 +234,7 @@
       "id": "braided-xlr",
       "name": "Braided XLR cable",
       "category": "Cables & power",
-      "detail": "Black/white braided XLR male–female",
+      "detail": "Black/white braided XLR male\u2013female",
       "photos": [
         "braided-xlr.jpg"
       ]
@@ -243,7 +243,7 @@
       "id": "xlr-black",
       "name": "Black XLR cables",
       "category": "Cables & power",
-      "detail": "XLR male–female",
+      "detail": "XLR male\u2013female",
       "photos": [
         "xlr-black-a.jpg",
         "xlr-black-b.jpg"
@@ -251,7 +251,7 @@
     },
     {
       "id": "35mm-xlr",
-      "name": "3.5mm TRS → XLR",
+      "name": "3.5mm TRS \u2192 XLR",
       "category": "Cables & power",
       "detail": "3.5mm TRS to XLR male",
       "photos": [
@@ -262,7 +262,7 @@
       "id": "teal-y",
       "name": "Teal Y-cable",
       "category": "Cables & power",
-      "detail": "3.5mm → dual 1/4\" braided",
+      "detail": "3.5mm \u2192 dual 1/4\" braided",
       "photos": [
         "teal-y-cable.jpg"
       ]
@@ -289,7 +289,7 @@
       "id": "speakon",
       "name": "Speakon / circular cables",
       "category": "Cables & power",
-      "detail": "2× thick Speakon-style cables (no photo yet)",
+      "detail": "2\u00d7 thick Speakon-style cables (no photo yet)",
       "photos": []
     },
     {
