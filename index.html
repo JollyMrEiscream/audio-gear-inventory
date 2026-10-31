@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0c0d10" />
+    <title>Audio Gear Inventory — Levi Szantosi</title>
+    <meta
+      name="description"
+      content="Public catalog of Levi Szantosi’s audio gear: speakers, mixers, microphones, stands, and cables."
+    />
+    <link rel="canonical" href="https://jollymreiscream.github.io/audio-gear-inventory/" />
+    <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip" href="#catalog">Skip to catalog</a>
+
+    <header class="site-header">
+      <div class="wrap header-grid">
+        <div>
+          <p class="kicker" id="kicker">Public catalog</p>
+          <h1 id="title">Audio Gear Inventory</h1>
+          <p class="byline" id="byline"></p>
+          <p class="lede" id="lede"></p>
+        </div>
+        <dl class="stats" id="stats"></dl>
+      </div>
+    </header>
+
+    <div class="controls">
+      <div class="wrap controls-bar">
+        <form class="search" id="search-form" role="search">
+          <label class="sr-only" for="q">Search gear</label>
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.7" />
+            <path d="M16 16 L20.5 20.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+          </svg>
+          <input
+            id="q"
+            type="search"
+            placeholder="Search name, detail, or category"
+            autocomplete="off"
+            spellcheck="false"
+            enterkeyhint="search"
+          />
+          <button type="button" class="clear" id="clear" hidden aria-label="Clear search">×</button>
+        </form>
+        <div class="filters" role="group" aria-label="Photo filter">
+          <button type="button" class="is-on" data-filter="all" aria-pressed="true">
+            All <span id="count-all"></span>
+          </button>
+          <button type="button" data-filter="photo" aria-pressed="false">
+            Photographed <span id="count-photo"></span>
+          </button>
+          <button type="button" data-filter="nophoto" aria-pressed="false">
+            No photo <span id="count-nophoto"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap layout">
+      <nav class="rail" id="rail" aria-label="Categories"></nav>
+      <main id="catalog" class="content">
+        <p id="status" class="status" aria-live="polite"></p>
+        <div id="results"></div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p id="footer"></p>
+      </div>
+    </footer>
+
+    <dialog id="lightbox" aria-labelledby="lb-title">
+      <div class="lb">
+        <div class="lb-top">
+          <div>
+            <p class="kicker" id="lb-cat"></p>
+            <h2 id="lb-title"></h2>
+            <p class="lb-detail" id="lb-detail"></p>
+          </div>
+          <button type="button" class="close" id="lb-close" aria-label="Close photos">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="lb-stage" id="lb-stage">
+          <button type="button" class="nav prev" id="lb-prev" aria-label="Previous photo" hidden>‹</button>
+          <img id="lb-img" alt="" />
+          <button type="button" class="nav next" id="lb-next" aria-label="Next photo" hidden>›</button>
+          <p class="lb-fallback" id="lb-fallback" hidden>This photo could not be loaded.</p>
+        </div>
+        <div class="lb-bottom">
+          <p id="lb-count" class="lb-count" aria-live="polite"></p>
+          <div id="lb-thumbs" class="thumbs" hidden></div>
+        </div>
+      </div>
+    </dialog>
+
+    <noscript>
+      <p class="noscript">JavaScript is required to browse this catalog.</p>
+    </noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
