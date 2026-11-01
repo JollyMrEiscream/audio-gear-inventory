@@ -7,7 +7,8 @@
     "Mixers & wireless",
     "Mics",
     "Stands & hardware",
-    "Cables & power"
+    "Cables & power",
+    "Lighting"
   ],
   "items": [
     {
@@ -309,6 +310,16 @@
       "photos": [
         "psu-brick-a.jpg",
         "psu-brick-b.jpg"
+      ]
+    },
+    {
+      "id": "gvm-led-light-kit",
+      "name": "GVM LED video light kit",
+      "category": "Lighting",
+      "detail": "Soft case with 2\u00d7 rectangular LED panels (U-brackets), 2\u00d7 light stands, mounting yoke/bracket, power cable",
+      "photos": [
+        "gvm-led-kit-case.jpg",
+        "gvm-led-kit-open.jpg"
       ]
     }
   ]
