@@ -1,6 +1,6 @@
 {
   "title": "Audio Gear Inventory",
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "owner": "Levi Szantosi",
   "categories": [
     "Speakers & stands",
@@ -113,6 +113,15 @@
       "detail": "Long-range Bluetooth transmitter/receiver (TX / Bypass / RX)",
       "photos": [
         "1mii-bluetooth.jpg"
+      ]
+    },
+    {
+      "id": "phenyx-ptu-5000",
+      "name": "Phenyx Pro PTU-5000 Wireless Microphone System",
+      "category": "Mixers & wireless",
+      "detail": "4-channel UHF system (box). Includes: 1\u00d7 PWR-5000 receiver, 2\u00d7 BNC antennas, power adapter, 6.35mm audio cable, 6.35mm\u21923.5mm adapter, user\u2019s manual, AA batteries. Transmitter kit is either 4\u00d7 handheld + anti-roll rings (PTU-5000-4H) or 2\u00d7 handheld + 2\u00d7 bodypack with headset/lapel (PTU-5000-2H2B) \u2014 confirm when opened.",
+      "photos": [
+        "phenyx-ptu-5000-box.jpg"
       ]
     },
     {
