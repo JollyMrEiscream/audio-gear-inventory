@@ -321,6 +321,50 @@
         "gvm-led-kit-case.jpg",
         "gvm-led-kit-open.jpg"
       ]
+    },
+    {
+      "id": "kxable-rca-quarter-50ft",
+      "name": "Kxable dual RCA to dual 1/4\" TS cable (50 ft)",
+      "category": "Cables & power",
+      "detail": "Dual RCA to dual 6.35 mm TS \u00b7 23AWG pure copper, dual shielding \u00b7 Amazon B0BNWT6L1V",
+      "photos": [
+        "kxable-rca-quarter.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.amazon.com/dp/B0BNWT6L1V"
+    },
+    {
+      "id": "elecan-xlr-75ft",
+      "name": "Elecan XLR cable (75 ft)",
+      "category": "Cables & power",
+      "detail": "3-pin male\u2013female balanced mic/DMX cable \u00b7 24AWG shielded \u00b7 Amazon B0B1WYP99Z",
+      "photos": [
+        "elecan-xlr-75ft.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.amazon.com/dp/B0B1WYP99Z"
+    },
+    {
+      "id": "pig-hog-phm50",
+      "name": "Pig Hog PHM50 XLR cables (2\u00d7 50 ft)",
+      "category": "Cables & power",
+      "detail": "PHM50 series 2-pack \u00b7 8 mm rubber jacket, heat-shrink connectors \u00b7 Amazon B0198NI9Z2",
+      "photos": [
+        "pig-hog-phm50.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.amazon.com/dp/B0198NI9Z2"
+    },
+    {
+      "id": "betopper-lc001",
+      "name": "Betopper 100W COB LED stage spotlight",
+      "category": "Lighting",
+      "detail": "ProCob LC001-H with barndoor \u00b7 warm/cold white, CRI >90, DMX512/master-slave \u00b7 Amazon B09W9JPLPP",
+      "photos": [
+        "betopper-lc001.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.amazon.com/dp/B09W9JPLPP"
     }
   ]
 }
