@@ -45,7 +45,7 @@
           <input
             id="q"
             type="search"
-            placeholder="Search name, detail, or category"
+            placeholder="Search name, brand, or notes"
             autocomplete="off"
             spellcheck="false"
             enterkeyhint="search"
@@ -63,6 +63,13 @@
             No photo <span id="count-nophoto"></span>
           </button>
         </div>
+        <button type="button" class="checklist-btn" id="open-checklist" aria-haspopup="dialog" aria-controls="checklist">
+          Checklist <span id="pack-count">0</span>
+        </button>
+      </div>
+      <div class="wrap chip-row">
+        <p class="rail-label" id="category-label">Category</p>
+        <div class="filters" id="categories" role="group" aria-labelledby="category-label"></div>
       </div>
     </div>
 
@@ -104,6 +111,28 @@
         </div>
       </div>
     </dialog>
+
+    <dialog id="checklist" aria-labelledby="check-title">
+      <div class="check">
+        <div class="check-top">
+          <div>
+            <p class="kicker">Gig pack</p>
+            <h2 id="check-title">Checklist</h2>
+            <p class="lb-detail" id="check-summary"></p>
+          </div>
+          <button type="button" class="close" id="check-close" aria-label="Close checklist">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div id="check-body" class="check-body"></div>
+        <div class="check-actions">
+          <button type="button" id="check-clear">Clear</button>
+          <button type="button" id="check-print">Print</button>
+        </div>
+      </div>
+    </dialog>
+
+    <div id="print-sheet" class="print-sheet"></div>
 
     <noscript>
       <p class="noscript">JavaScript is required to browse this catalog.</p>
