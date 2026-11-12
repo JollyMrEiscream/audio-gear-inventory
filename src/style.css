@@ -13,6 +13,7 @@
   --sans: Outfit, "Avenir Next", "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  --controls-h: 120px;
   color-scheme: dark;
 }
 
@@ -260,6 +261,45 @@ h1 {
   border-color: var(--line-strong);
 }
 
+.checklist-btn {
+  margin-left: auto;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 9px 14px;
+  cursor: pointer;
+}
+
+.checklist-btn span {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  margin-left: 4px;
+  color: var(--accent);
+}
+
+.checklist-btn.has-items {
+  border-color: rgba(231, 161, 90, 0.75);
+}
+
+.chip-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 0 12px;
+}
+
+.chip-row .rail-label {
+  margin: 0;
+  padding: 0;
+  flex: none;
+}
+
+.chip-row .filters {
+  flex: 1;
+  min-width: 0;
+}
+
 .layout {
   display: grid;
   grid-template-columns: 210px minmax(0, 1fr);
@@ -270,7 +310,7 @@ h1 {
 
 .rail {
   position: sticky;
-  top: 84px;
+  top: calc(var(--controls-h) + 12px);
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -324,7 +364,7 @@ h1 {
 }
 
 #catalog section {
-  scroll-margin-top: 96px;
+  scroll-margin-top: calc(var(--controls-h) + 28px);
 }
 
 .section-head {
@@ -368,6 +408,33 @@ h1 {
 .card:hover {
   border-color: var(--line-strong);
   background: rgba(255, 255, 255, 0.04);
+}
+
+.card.is-packed {
+  border-color: rgba(231, 161, 90, 0.55);
+}
+
+.pack {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: auto;
+  padding-top: 12px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  cursor: pointer;
+}
+
+.pack input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
 }
 
 .shot {
@@ -451,6 +518,9 @@ h1 {
 }
 
 .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 14px 14px 16px;
 }
 
@@ -691,7 +761,7 @@ input:focus-visible {
   }
 
   .rail {
-    top: 72px;
+    top: var(--controls-h);
     z-index: 15;
     flex-direction: row;
     gap: 6px;
@@ -702,7 +772,7 @@ input:focus-visible {
     backdrop-filter: blur(12px);
   }
 
-  .rail-label {
+  .rail > .rail-label {
     display: none;
   }
 
@@ -712,7 +782,17 @@ input:focus-visible {
   }
 
   #catalog section {
-    scroll-margin-top: 148px;
+    scroll-margin-top: calc(var(--controls-h) + 56px);
+  }
+
+  .checklist-btn {
+    margin-left: 0;
+  }
+
+  .chip-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
@@ -740,6 +820,248 @@ input:focus-visible {
   .lb-bottom {
     padding: 12px;
   }
+}
+
+#checklist {
+  width: min(640px, calc(100vw - 28px));
+  max-height: min(82vh, 760px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  background: #121318;
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+#checklist[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+#checklist::backdrop {
+  background: rgba(5, 6, 8, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.check {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: min(82vh, 760px);
+}
+
+.check-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px 8px;
+}
+
+.check-top h2 {
+  margin: 4px 0 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  letter-spacing: -0.02em;
+}
+
+.check-body {
+  overflow: auto;
+  padding: 4px 18px 8px;
+}
+
+.check-body .empty {
+  margin: 8px 0 16px;
+}
+
+.check-group {
+  margin: 0 0 16px;
+}
+
+.check-group h2,
+.print-group h2 {
+  margin: 0 0 6px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.check-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 6px 0;
+  border-top: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.check-row input {
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.check-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 18px 16px;
+  border-top: 1px solid var(--line);
+}
+
+.check-actions button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 9px 14px;
+  cursor: pointer;
+}
+
+.check-actions button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+#check-print {
+  background: var(--text);
+  color: #16140f;
+  border-color: var(--text);
+}
+
+.print-name {
+  flex: 1;
+  min-width: 0;
+}
+
+.print-qty {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  flex: none;
+}
+
+.print-sheet {
+  display: none;
+}
+
+@media print {
+  body.is-printing-checklist {
+    page: checklist;
+    background: #fff !important;
+    border-top: 0 !important;
+    color: #1a1208;
+  }
+
+  body.is-printing-checklist .skip {
+    display: none !important;
+  }
+
+  body.is-printing-checklist .site-header,
+  body.is-printing-checklist .controls,
+  body.is-printing-checklist .layout,
+  body.is-printing-checklist .site-footer,
+  body.is-printing-checklist .noscript,
+  body.is-printing-checklist #lightbox,
+  body.is-printing-checklist #checklist {
+    display: none !important;
+  }
+
+  body.is-printing-checklist .print-sheet {
+    display: block !important;
+    color: #1a1208;
+    background: #fff;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+
+  body.is-printing-checklist .print-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #1a1208;
+  }
+
+  body.is-printing-checklist .print-kicker {
+    margin: 0;
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 8pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8a5a28;
+  }
+
+  body.is-printing-checklist .print-sheet h1 {
+    margin: 2px 0 0;
+    color: #1a1208;
+    font-family: "Instrument Serif", Palatino, "Palatino Linotype", serif;
+    font-size: 22pt;
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+
+  body.is-printing-checklist .print-meta {
+    margin: 0;
+    text-align: right;
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 8.5pt;
+    color: #3d3832;
+  }
+
+  body.is-printing-checklist .print-columns.is-two {
+    columns: 2;
+    column-gap: 0.4in;
+  }
+
+  body.is-printing-checklist .print-group {
+    break-inside: avoid;
+    margin: 0 0 10px;
+  }
+
+  body.is-printing-checklist .print-group h2 {
+    margin: 0 0 3px;
+    color: #8a5a28;
+    font-size: 8pt;
+  }
+
+  body.is-printing-checklist .print-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 2px 0;
+    break-inside: avoid;
+  }
+
+  body.is-printing-checklist .print-box {
+    width: 11px;
+    height: 11px;
+    border: 1.5px solid #1a1208;
+    flex: none;
+    transform: translateY(1px);
+  }
+
+  body.is-printing-checklist .print-name {
+    color: #1a1208;
+    font-size: 10.5pt;
+  }
+
+  body.is-printing-checklist .print-qty {
+    color: #1a1208;
+    font-size: 9.5pt;
+  }
+}
+
+@page checklist {
+  size: letter;
+  margin: 0.45in;
 }
 
 @media (prefers-reduced-motion: reduce) {
