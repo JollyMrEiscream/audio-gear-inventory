@@ -401,6 +401,28 @@
       "photos": [
         "islewire-50ft-sjtw.jpg"
       ]
+    },
+    {
+      "id": "cable-matters-500032-6",
+      "name": "Cable Matters 3.5mm TRS to Dual 6.35mm TS Breakout Cable (6 ft)",
+      "category": "Cables & power",
+      "detail": "Model 500032-6 · 3.5 mm TRS to dual 6.35 mm TS, 6 ft",
+      "photos": [
+        "cable-matters-500032-6.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.cablematters.com/pc-1145-148-35mm-trs-to-dual-635mm-ts-breakout-cable.aspx"
+    },
+    {
+      "id": "innogear-ts325",
+      "name": "InnoGear Mic Stand TS325",
+      "category": "Stands & hardware",
+      "detail": "Podcast/stage floor stand with boom arm · 3-in-1 desktop to floor (17.6–55.8 in), 360° boom, 3.7 lb iron base, 2 mic clips, 3/8\" to 5/8\" adapter",
+      "photos": [
+        "innogear-ts325.jpg"
+      ],
+      "photoSource": "web",
+      "photoCredit": "https://www.innogear.com/products/innogear-mic-stand-floor-boom-arm-floor-microphone-stand-height-adjustable-ts325"
     }
   ]
 }
