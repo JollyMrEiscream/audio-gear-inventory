@@ -1,6 +1,6 @@
 {
   "title": "Audio Gear Inventory",
-  "updated": "2026-11-01",
+  "updated": "2026-11-14",
   "owner": "Levi Szantosi",
   "categories": [
     "Speakers & stands",
@@ -13,9 +13,9 @@
   "items": [
     {
       "id": "alto-ts410",
-      "name": "Alto Professional TS410 (2\u00d7)",
+      "name": "Alto Professional TS410 (2×)",
       "category": "Speakers & stands",
-      "detail": "2\u00d7 2000 W 10\" 2-way powered loudspeakers \u00b7 serial on unit 1: (21)T42401120427628",
+      "detail": "2× 2000 W 10\" 2-way powered loudspeakers · serial on unit 1: (21)T42401120427628",
       "photos": [
         "alto-ts410.jpg"
       ]
@@ -33,7 +33,7 @@
       "id": "pyle-stands",
       "name": "Pyle speaker stands",
       "category": "Speakers & stands",
-      "detail": "2\u00d7 speaker stands (model not recorded)",
+      "detail": "2× speaker stands (model not recorded)",
       "photos": []
     },
     {
@@ -71,7 +71,7 @@
       "id": "shure-blx5r",
       "name": "Shure BLX5R",
       "category": "Mixers & wireless",
-      "detail": "Wireless receiver \u2014 label reads BLX5R (Shure\u2019s rack receiver is the BLX4R; confirm model)",
+      "detail": "Wireless receiver — label reads BLX5R (Shure’s rack receiver is the BLX4R; confirm model)",
       "photos": []
     },
     {
@@ -100,7 +100,7 @@
       "id": "swiff-m1",
       "name": "Swiff Audio M1",
       "category": "Mixers & wireless",
-      "detail": "2\u00d7 M1 2.4 GHz XLR plug-on wireless transmitters",
+      "detail": "2× M1 2.4 GHz XLR plug-on wireless transmitters",
       "photos": [
         "swiff-m1.jpg"
       ],
@@ -120,7 +120,7 @@
       "id": "phenyx-ptu-5000",
       "name": "Phenyx Pro PTU-5000-4H Wireless Microphone System",
       "category": "Mixers & wireless",
-      "detail": "4-channel UHF (PTU-5000-4H). Box: 1\u00d7 PWR-5000 receiver, 2\u00d7 BNC antennas, 4\u00d7 PWH-5 handheld mics, 4\u00d7 anti-roll rings, power adapter, 6.35mm audio cable, 6.35mm\u21923.5mm adapter, user\u2019s manual, AA batteries.",
+      "detail": "4-channel UHF (PTU-5000-4H). Box: 1× PWR-5000 receiver, 2× BNC antennas, 4× PWH-5 handheld mics, 4× anti-roll rings, power adapter, 6.35mm audio cable, 6.35mm→3.5mm adapter, user’s manual, AA batteries.",
       "photos": [
         "phenyx-ptu-5000-box.jpg"
       ]
@@ -169,7 +169,7 @@
       "id": "mini-lav",
       "name": "XLR-female mini lead (silver/blue)",
       "category": "Cables & power",
-      "detail": "Silver/blue XLR-female connector on a short thin lead with a mini plug \u2014 likely a lav/headset mic adapter",
+      "detail": "Silver/blue XLR-female connector on a short thin lead with a mini plug — likely a lav/headset mic adapter",
       "photos": [
         "xlr-female-mini-lead.jpg"
       ]
@@ -187,14 +187,14 @@
       "id": "mic-stands",
       "name": "Microphone stands",
       "category": "Stands & hardware",
-      "detail": "2\u00d7 3.5 ft microphone stands",
+      "detail": "2× 3.5 ft microphone stands",
       "photos": []
     },
     {
       "id": "rode-holders",
       "name": "Rode microphone clips",
       "category": "Stands & hardware",
-      "detail": "2\u00d7 clips (product photo: R\u00d8DE RM5, the clip that ships with the NTG4)",
+      "detail": "2× clips (product photo: RØDE RM5, the clip that ships with the NTG4)",
       "photos": [
         "rode-rm5-holder.jpg"
       ],
@@ -214,9 +214,9 @@
     },
     {
       "id": "xlr-quarter-adapters",
-      "name": "XLR \u2192 1/4\" adapters",
+      "name": "XLR → 1/4\" adapters",
       "category": "Stands & hardware",
-      "detail": "3\u00d7 adapters: 2\u00d7 XLR female \u2192 1/4\" TS, 1\u00d7 XLR male \u2192 1/4\" TRS",
+      "detail": "3× adapters: 2× XLR female → 1/4\" TS, 1× XLR male → 1/4\" TRS",
       "photos": [
         "xlr-to-quarter-adapters-a.jpg",
         "xlr-to-quarter-adapters-b.jpg"
@@ -235,7 +235,7 @@
       "id": "hosa-cable",
       "name": "Dual 1/4\" + RCA cable",
       "category": "Cables & power",
-      "detail": "Black dual cable: 2\u00d7 1/4\" plugs to 2\u00d7 RCA plugs (listed earlier as HOSA multi-end)",
+      "detail": "Black dual cable: 2× 1/4\" plugs to 2× RCA plugs (listed earlier as HOSA multi-end)",
       "photos": [
         "hosa-multi-cable.jpg"
       ]
@@ -244,7 +244,7 @@
       "id": "braided-xlr",
       "name": "Braided XLR cable",
       "category": "Cables & power",
-      "detail": "Black/white braided XLR male\u2013female",
+      "detail": "Black/white braided XLR male–female",
       "photos": [
         "braided-xlr.jpg"
       ]
@@ -253,7 +253,7 @@
       "id": "xlr-black",
       "name": "Black XLR cables",
       "category": "Cables & power",
-      "detail": "XLR male\u2013female",
+      "detail": "XLR male–female",
       "photos": [
         "xlr-black-a.jpg",
         "xlr-black-b.jpg"
@@ -261,7 +261,7 @@
     },
     {
       "id": "35mm-xlr",
-      "name": "3.5mm TRS \u2192 XLR",
+      "name": "3.5mm TRS → XLR",
       "category": "Cables & power",
       "detail": "3.5mm TRS to XLR male",
       "photos": [
@@ -272,7 +272,7 @@
       "id": "teal-y",
       "name": "Teal Y-cable",
       "category": "Cables & power",
-      "detail": "3.5mm \u2192 dual 1/4\" braided",
+      "detail": "3.5mm → dual 1/4\" braided",
       "photos": [
         "teal-y-cable.jpg"
       ]
@@ -299,7 +299,7 @@
       "id": "speakon",
       "name": "Speakon / circular cables",
       "category": "Cables & power",
-      "detail": "2\u00d7 thick Speakon-style cables (no photo yet)",
+      "detail": "2× thick Speakon-style cables (no photo yet)",
       "photos": []
     },
     {
@@ -316,7 +316,7 @@
       "id": "gvm-led-light-kit",
       "name": "GVM LED video light kit",
       "category": "Lighting",
-      "detail": "Soft case with 2\u00d7 rectangular LED panels (U-brackets), 2\u00d7 light stands, mounting yoke/bracket, power cable",
+      "detail": "Soft case with 2× rectangular LED panels (U-brackets), 2× light stands, mounting yoke/bracket, power cable",
       "photos": [
         "gvm-led-kit-case.jpg",
         "gvm-led-kit-open.jpg"
@@ -326,7 +326,7 @@
       "id": "kxable-rca-quarter-50ft",
       "name": "Kxable dual RCA to dual 1/4\" TS cable (50 ft)",
       "category": "Cables & power",
-      "detail": "Dual RCA to dual 6.35 mm TS \u00b7 23AWG pure copper, dual shielding \u00b7 Amazon B0BNWT6L1V",
+      "detail": "Dual RCA to dual 6.35 mm TS · 23AWG pure copper, dual shielding · Amazon B0BNWT6L1V",
       "photos": [
         "kxable-rca-quarter.jpg"
       ],
@@ -337,7 +337,7 @@
       "id": "elecan-xlr-75ft",
       "name": "Elecan XLR cable (75 ft)",
       "category": "Cables & power",
-      "detail": "3-pin male\u2013female balanced mic/DMX cable \u00b7 24AWG shielded \u00b7 Amazon B0B1WYP99Z",
+      "detail": "3-pin male–female balanced mic/DMX cable · 24AWG shielded · Amazon B0B1WYP99Z",
       "photos": [
         "elecan-xlr-75ft.jpg"
       ],
@@ -346,9 +346,9 @@
     },
     {
       "id": "pig-hog-phm50",
-      "name": "Pig Hog PHM50 XLR cables (2\u00d7 50 ft)",
+      "name": "Pig Hog PHM50 XLR cables (2× 50 ft)",
       "category": "Cables & power",
-      "detail": "PHM50 series 2-pack \u00b7 8 mm rubber jacket, heat-shrink connectors \u00b7 Amazon B0198NI9Z2",
+      "detail": "PHM50 series 2-pack · 8 mm rubber jacket, heat-shrink connectors · Amazon B0198NI9Z2",
       "photos": [
         "pig-hog-phm50.jpg"
       ],
@@ -359,12 +359,48 @@
       "id": "betopper-lc001",
       "name": "Betopper 100W COB LED stage spotlight",
       "category": "Lighting",
-      "detail": "ProCob LC001-H with barndoor \u00b7 warm/cold white, CRI >90, DMX512/master-slave \u00b7 Amazon B09W9JPLPP",
+      "detail": "ProCob LC001-H with barndoor · warm/cold white, CRI >90, DMX512/master-slave · Amazon B09W9JPLPP",
       "photos": [
         "betopper-lc001.jpg"
       ],
       "photoSource": "web",
       "photoCredit": "https://www.amazon.com/dp/B09W9JPLPP"
+    },
+    {
+      "id": "diy-doctor-pro-gaffer",
+      "name": "DIY Doctor Pro Multisurface Gaffer Tape (3×)",
+      "category": "Cables & power",
+      "detail": "Black, 2 in × 30 yd, cloth-based, residue-free",
+      "photos": [
+        "diy-doctor-pro-gaffer.jpg"
+      ]
+    },
+    {
+      "id": "elpc-12awg-3p-35ft",
+      "name": "12AWG Extension Cord with 3 Outlets (35 ft)",
+      "category": "Cables & power",
+      "detail": "ELPC12AWG-3P-35FT · 12 AWG, 3 outlets",
+      "photos": [
+        "elpc-12awg-3p-35ft.jpg"
+      ]
+    },
+    {
+      "id": "elpc-12awg-3p-50ft",
+      "name": "12AWG Extension Cord with 3 Outlets (50 ft)",
+      "category": "Cables & power",
+      "detail": "ELPC12AWG-3P-50FT · 12 AWG, 3 outlets",
+      "photos": [
+        "elpc-12awg-3p-50ft.jpg"
+      ]
+    },
+    {
+      "id": "islewire-50ft-sjtw",
+      "name": "Islewire 50 ft Indoor/Outdoor Extension Cord",
+      "category": "Cables & power",
+      "detail": "Black, 12/3 SJTW, 3-outlet lighted end, 15 A / 125 V / 1875 W, ETL listed · ISLE-123-SJTW-T-3OUT-BL-50F-L",
+      "photos": [
+        "islewire-50ft-sjtw.jpg"
+      ]
     }
   ]
 }
