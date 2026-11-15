@@ -1,20 +1,34 @@
+import {
+  groupByCategory,
+  hasPhoto,
+  itemQuantity,
+  totalQuantity,
+  visibleItems,
+} from './catalog.js';
 import inventory from './data/inventory.json';
 import { fittedSize } from './fit.js';
+import { loadPack, packedItems, savePack, togglePackId } from './pack.js';
 import './style.css';
 
 const base = import.meta.env.BASE_URL;
 const state = {
   query: '',
   filter: 'all',
+  category: 'all',
   lbId: null,
   lbIndex: 0,
 };
 
+const storage = window.localStorage;
+let packIds = loadPack(storage).filter((id) => inventory.items.some((item) => item.id === id));
+
 const dialog = document.querySelector('#lightbox');
+const checklist = document.querySelector('#checklist');
 const lbImg = document.querySelector('#lb-img');
 const lbStage = document.querySelector('#lb-stage');
 const results = document.querySelector('#results');
 const input = document.querySelector('#q');
+const controls = document.querySelector('.controls');
 
 let sectionObserver = null;
 
@@ -27,12 +41,14 @@ const frameObserver = new ResizeObserver((entries) => {
 
 frameObserver.observe(lbStage);
 
+const controlsObserver = new ResizeObserver(() => {
+  const height = Math.ceil(controls.getBoundingClientRect().height);
+  document.documentElement.style.setProperty('--controls-h', `${height}px`);
+});
+controlsObserver.observe(controls);
+
 function photoSrc(file) {
   return `${base}photos/${encodeURIComponent(file)}`;
-}
-
-function hasPhoto(item) {
-  return Array.isArray(item.photos) && item.photos.length > 0;
 }
 
 function slug(category) {
@@ -47,10 +63,6 @@ function formatDate(iso) {
     day: 'numeric',
     timeZone: 'UTC',
   });
-}
-
-function haystack(item) {
-  return [item.name, item.detail, item.category, item.id].join(' ').toLowerCase();
 }
 
 function contentBox(box) {
@@ -159,7 +171,8 @@ function highlightRail() {
 
 function renderCard(item) {
   const index = inventory.items.findIndex((entry) => entry.id === item.id) + 1;
-  const article = el('article', { class: 'card' });
+  const packed = packIds.includes(item.id);
+  const article = el('article', { class: packed ? 'card is-packed' : 'card' });
   article.dataset.id = item.id;
   article.append(hasPhoto(item) ? photoButton(item) : emptyShot());
 
@@ -168,9 +181,26 @@ function renderCard(item) {
     el('p', { class: 'num', text: String(index).padStart(2, '0') }),
     el('h3', { text: item.name }),
     el('p', { class: 'detail', text: item.detail }),
+    packControl(item),
   );
   article.append(body);
   return article;
+}
+
+function packControl(item) {
+  const label = el('label', { class: 'pack' });
+  const box = el('input', { type: 'checkbox' });
+  box.dataset.pack = item.id;
+  box.checked = packIds.includes(item.id);
+  box.setAttribute('aria-label', `Pack ${item.name}`);
+  box.addEventListener('change', () => {
+    packIds = togglePackId(packIds, item.id);
+    persistPack();
+    box.closest('.card')?.classList.toggle('is-packed', packIds.includes(item.id));
+    updateChecklist();
+  });
+  label.append(box, el('span', { text: 'Pack' }));
+  return label;
 }
 
 function photoButton(item) {
@@ -207,38 +237,57 @@ function emptyShot() {
   return wrap;
 }
 
-function renderCatalog() {
-  const tokens = state.query.trim().toLowerCase().split(/\s+/).filter(Boolean);
-  const queried = inventory.items.filter((item) => tokens.every((token) => haystack(item).includes(token)));
-  const photographed = queried.filter(hasPhoto).length;
-  document.querySelector('#count-all').textContent = String(queried.length);
-  document.querySelector('#count-photo').textContent = String(photographed);
-  document.querySelector('#count-nophoto').textContent = String(queried.length - photographed);
-
-  const visible = queried.filter((item) => {
-    if (state.filter === 'photo') return hasPhoto(item);
-    if (state.filter === 'nophoto') return !hasPhoto(item);
-    return true;
-  });
-
-  const grouped = new Map(inventory.categories.map((category) => [category, []]));
-  for (const item of visible) {
-    if (!grouped.has(item.category)) grouped.set(item.category, []);
-    grouped.get(item.category).push(item);
+function renderCategoryChips(searched) {
+  const host = document.querySelector('#categories');
+  const active = state.category;
+  host.replaceChildren();
+  const choices = [
+    ['all', 'All'],
+    ...inventory.categories.map((category) => [category, category]),
+  ];
+  for (const [id, label] of choices) {
+    const count = visibleItems(searched, { category: id, photo: state.filter }).length;
+    const button = el('button', { type: 'button' });
+    button.dataset.category = id;
+    const on = id === active;
+    button.classList.toggle('is-on', on);
+    button.setAttribute('aria-pressed', on ? 'true' : 'false');
+    button.append(document.createTextNode(label), el('span', { text: String(count) }));
+    button.addEventListener('click', () => {
+      state.category = id;
+      renderCatalog();
+      [...host.querySelectorAll('[data-category]')].find((button) => button.dataset.category === id)?.focus();
+    });
+    host.append(button);
   }
+}
+
+function renderCatalog() {
+  const searched = visibleItems(inventory.items, { query: state.query });
+  const inCategory = visibleItems(searched, { category: state.category });
+  const photographed = inCategory.filter(hasPhoto).length;
+  document.querySelector('#count-all').textContent = String(inCategory.length);
+  document.querySelector('#count-photo').textContent = String(photographed);
+  document.querySelector('#count-nophoto').textContent = String(inCategory.length - photographed);
+  renderCategoryChips(searched);
+
+  const visible = visibleItems(inCategory, { photo: state.filter });
+  const grouped = groupByCategory(visible, inventory.categories);
 
   const counts = new Map();
   results.querySelectorAll('.shot-frame').forEach((frame) => frameObserver.unobserve(frame));
   results.replaceChildren();
   document.querySelector('#status').textContent = visible.length
     ? `Showing ${visible.length} of ${inventory.items.length}`
-    : 'Nothing in the catalog matches that search.';
+    : state.query
+      ? 'Nothing in the catalog matches that search.'
+      : 'Nothing in the catalog matches those filters.';
 
   if (!visible.length) {
     results.append(
       el('p', {
         class: 'empty',
-        text: 'Try another name, or switch the Photographed and No photo filters.',
+        text: 'Try another name, brand, or note, or switch the category and photo filters.',
       }),
     );
   }
@@ -334,6 +383,124 @@ function step(delta) {
   showSlide();
 }
 
+function currentPack() {
+  return packedItems(inventory.items, packIds);
+}
+
+function pieceLabel(count, noun) {
+  return `${count} ${noun}${count === 1 ? '' : 's'}`;
+}
+
+function persistPack() {
+  try {
+    savePack(packIds, storage);
+  } catch {
+    // Private mode or a full store: the pack still works until the page closes.
+  }
+}
+
+function syncPackChecks() {
+  document.querySelectorAll('[data-pack]').forEach((box) => {
+    const on = packIds.includes(box.dataset.pack);
+    box.checked = on;
+    box.closest('.card')?.classList.toggle('is-packed', on);
+  });
+}
+
+function checklistRow(item, { interactive }) {
+  const qty = itemQuantity(item);
+  if (!interactive) {
+    const row = el('div', { class: 'print-row' });
+    row.append(
+      el('span', { class: 'print-box', 'aria-hidden': 'true' }),
+      el('span', { class: 'print-name', text: item.name }),
+      el('span', { class: 'print-qty', text: `×${qty}` }),
+    );
+    return row;
+  }
+  const label = el('label', { class: 'check-row' });
+  const box = el('input', { type: 'checkbox' });
+  box.checked = true;
+  box.setAttribute('aria-label', `Remove ${item.name} from the checklist`);
+  box.addEventListener('change', () => {
+    packIds = togglePackId(packIds, item.id);
+    persistPack();
+    syncPackChecks();
+    updateChecklist();
+  });
+  label.append(box, el('span', { class: 'print-name', text: item.name }), el('span', { class: 'print-qty', text: `×${qty}` }));
+  return label;
+}
+
+function checklistGroups(packed, interactive) {
+  const wrap = el('div', { class: interactive ? 'check-groups' : 'print-columns' });
+  if (!interactive && packed.length > 16) wrap.classList.add('is-two');
+  for (const [category, items] of groupByCategory(packed, inventory.categories)) {
+    const group = el('section', { class: interactive ? 'check-group' : 'print-group' });
+    group.append(el('h2', { text: category }));
+    for (const item of items) group.append(checklistRow(item, { interactive }));
+    wrap.append(group);
+  }
+  return wrap;
+}
+
+function updateChecklist() {
+  const packed = currentPack();
+  const count = packed.length;
+  const units = totalQuantity(packed);
+  document.querySelector('#pack-count').textContent = String(count);
+  const opener = document.querySelector('#open-checklist');
+  opener.classList.toggle('has-items', count > 0);
+  opener.setAttribute('aria-label', count ? `Open gig checklist, ${pieceLabel(count, 'piece')} packed` : 'Open gig checklist');
+
+  const summary = document.querySelector('#check-summary');
+  const body = document.querySelector('#check-body');
+  const clear = document.querySelector('#check-clear');
+  const print = document.querySelector('#check-print');
+  clear.disabled = count === 0;
+  print.disabled = count === 0;
+  summary.textContent = count
+    ? `${pieceLabel(count, 'piece')} · ${units} total`
+    : 'Tick Pack on any piece. The list stays in this browser.';
+  body.replaceChildren(count ? checklistGroups(packed, true) : el('p', { class: 'empty', text: 'Nothing packed yet.' }));
+
+  const sheet = document.querySelector('#print-sheet');
+  sheet.replaceChildren();
+  if (!count) return;
+  const head = el('header', { class: 'print-head' });
+  const titles = el('div');
+  titles.append(
+    el('p', { class: 'print-kicker', text: 'Gig checklist' }),
+    el('h1', { text: inventory.owner }),
+  );
+  head.append(
+    titles,
+    el('p', {
+      class: 'print-meta',
+      text: `${formatChecklistDate(new Date())} · ${pieceLabel(count, 'piece')} · ${units} total`,
+    }),
+  );
+  sheet.append(head, checklistGroups(packed, false));
+}
+
+function formatChecklistDate(date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function printChecklist() {
+  if (!packIds.length) return;
+  const reopen = checklist.open;
+  if (reopen) checklist.close();
+  document.body.classList.add('is-printing-checklist');
+  const cleanup = () => {
+    window.removeEventListener('afterprint', cleanup);
+    document.body.classList.remove('is-printing-checklist');
+    if (reopen && !checklist.open) checklist.showModal();
+  };
+  window.addEventListener('afterprint', cleanup);
+  window.print();
+}
+
 function bind() {
   document.querySelector('#search-form').addEventListener('submit', (event) => event.preventDefault());
   const clear = document.querySelector('#clear');
@@ -362,6 +529,28 @@ function bind() {
     });
   });
 
+  document.querySelector('#open-checklist').addEventListener('click', () => {
+    updateChecklist();
+    if (!checklist.open) checklist.showModal();
+  });
+  document.querySelector('#check-close').addEventListener('click', () => checklist.close());
+  document.querySelector('#check-clear').addEventListener('click', () => {
+    packIds = [];
+    persistPack();
+    syncPackChecks();
+    updateChecklist();
+  });
+  document.querySelector('#check-print').addEventListener('click', printChecklist);
+  checklist.addEventListener('click', (event) => {
+    if (event.target === checklist) checklist.close();
+  });
+  window.addEventListener('beforeprint', () => {
+    if (checklist.open) document.body.classList.add('is-printing-checklist');
+  });
+  window.addEventListener('afterprint', () => {
+    document.body.classList.remove('is-printing-checklist');
+  });
+
   document.querySelector('#lb-close').addEventListener('click', () => dialog.close());
   document.querySelector('#lb-prev').addEventListener('click', () => step(-1));
   document.querySelector('#lb-next').addEventListener('click', () => step(1));
@@ -385,7 +574,7 @@ function bind() {
 
   document.addEventListener('keydown', (event) => {
     const tag = document.activeElement?.tagName;
-    if (event.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA' && !dialog.open) {
+    if (event.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA' && !dialog.open && !checklist.open) {
       event.preventDefault();
       input.focus();
     }
@@ -410,4 +599,5 @@ function scrollToHash() {
 renderIntro();
 bind();
 renderCatalog();
+updateChecklist();
 scrollToHash();
